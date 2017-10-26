@@ -1,0 +1,46 @@
+{
+    "name": "cozy-konnector-sncf",
+    "version": "1.0.0",
+    "description": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cozy/cozy-konnector-sncf.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "AGPL-3.0",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "cozy-konnector-dev",
+        "watch": "tsc -p . && tsc -w -p .",
+        "standalone": "cozy-konnector-standalone",
+        "standalone:record": "REPLAY=record cozy-konnector-standalone",
+        "standalone:replay": "REPLAY=replay cozy-konnector-standalone",
+        "build": "webpack",
+        "lint": "standard --fix konnector.js",
+        "deploy:travis": "git-directory-deploy --username Cozy --email contact@cozycloud.cc --directory build/ --repo=https://$GITHUB_TOKEN@github.com/cozy/cozy-konnector-sncf.git",
+        "deploy": "git-directory-deploy --directory build/ --branch build --repo=https://github.com/cozy/cozy-konnector-sncf.git"
+    },
+    "dependencies": {
+        "@types/bluebird": "^3.5.16",
+        "@types/cheerio": "^0.22.3",
+        "@types/mockery": "^1.4.29",
+        "@types/moment-timezone": "^0.5.0",
+        "@types/request": "^2.0.6",
+        "@types/request-promise": "^4.1.38",
+        "bluebird": "^3.5.1",
+        "cheerio": "^1.0.0-rc.2",
+        "cozy-konnector-libs": "^3.0.6",
+        "mockery": "^2.1.0",
+        "moment-timezone": "^0.5.13",
+        "request": "^2.83.0"
+    },
+    "devDependencies": {
+        "copy-webpack-plugin": "^4.2.0",
+        "git-directory-deploy": "^1.5.1",
+        "standard": "^10.0.3",
+        "tslint": "^5.8.0",
+        "typescript": "2.5.3",
+        "webpack": "^3.8.1"
+    }
+}
